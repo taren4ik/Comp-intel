@@ -1,11 +1,8 @@
 from flask import Flask, render_template, url_for, request, redirect   #render выводит страницы
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'       #Устанавливаем БД
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
 
 
 @app.route('/')
