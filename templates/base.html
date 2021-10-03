@@ -2,11 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><meta name="viewport" content="width=device-width; initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  if (screen.width < 720)
+{
+    var mvp = document.getElementById('vp');
+    mvp.setAttribute('content','initial-scale=0.1');
+}
+</script>
+
 	<meta name="description" content="Поиск информации о людях; Competitive Intelligence; Конкурентная разведка">
 	<link rel="shortcut icon" href="static/css/img/favicon_owl.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}">
