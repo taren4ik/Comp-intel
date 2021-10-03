@@ -13,7 +13,6 @@ h1,h2{
     font-weight: bolder;
     margin-left: 25%;
     margin-right: 25%;
-    /*color: rgb(255, 255, 212);*/
     color:#FFF;
     text-align: justify;
     backdrop-filter: blur(5px);
@@ -65,7 +64,7 @@ body {
     margin:0px auto;
     padding:0px;
     position:relative;
-    width:1250px;
+    width:100%;
     color: rgb(49, 151, 116);
 }
 
@@ -85,5 +84,5 @@ footer{
   min-height: 100%;
 }
 .content {
-  padding-bottom: 90px;
+  padding-bottom: 10%;
 }
