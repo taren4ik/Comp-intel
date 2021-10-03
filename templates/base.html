@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="viewport" content="width=device-width; initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta name="description" content="Поиск информации о людях; Competitive Intelligence; Конкурентная разведка">
 	<link rel="shortcut icon" href="static/css/img/favicon_owl.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}">
@@ -13,29 +14,38 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<div class = "wrapper">
+
 <img src="static/css/img/comp-intel.jpg" alt="" style="width:100%;object-fit:cover;object-position:50% 50%;  position:fixed; top:0;">
 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"  style="margin-top: 100px">
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2   text-decoration-none" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная</font></font></a>
         <a class="me-3 py-2   text-decoration-none" href="/about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">О нас</font></font></a>
         <a class="me-3 py-2   text-decoration-none" href="/contact"><font style="vertical-align: inherit;">Контакты</font></font></a>
-        <a class="me-3 py-2   text-decoration-none" href="/photos"><font style="vertical-align: inherit;">Фото</font></font></a>
+        <a class="me-3 py-2   text-decoration-none" href="/photos"><font style="vertical-align: inherit;">Книги</font></font></a>
         <a class="me-3 py-2   text-decoration-none" href="/report"><font style="vertical-align: inherit;">Пример отчета</font></font></a>
 
       </nav>
 </div>
-  {% block body %}{% endblock %}
 
-<footer class="container">
-		<div class="footer">
-			<div class="rights">
-                <div align="center" class="h3" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit; color: #E6399B;  margin-left: 0%; margin-top: 50%;">© Comp-intel 2021</font></font></div>
-			</div>
-		</div>
-</footer>
-<div class="copy_ext" style="font-size: 11px; line-height: 1.3em; color: rgba(255,255,255); position: absolute;left: 0;bottom: 0; ">
-Перечень используемых источников : ГИБДД, ПФР, ФНС, Росстат, ЕГРЮЛ, ФМС, ФСПП, ФНП, ЕАИСТО, РСА, ЕФРСБ, ФСФМ, Росреестр, Центр раскрытия корпоративной информации, Фокус СКБ, Вконтакте, Facebook, Instagram, Одноклассники, Skype, WhatsApp, Viber, Avito, Youla (Юла), Из рук в руки – Irr.ru, Avto.ru, Циан, Яндекс, Google, Telegram, Mail.ru, Headhunter, Rusprofile, TrueCaller, Twitter, MTS, Билайн, Мегафон, Тинькофф Мобайл, Tele2, ICQ, GetContact, Foursquare, GitHub, Drive2.ru, Автокод.
+<div class="content" >
+      {% block body %}{% endblock %}
 </div>
 
+
+    <footer class="container">
+            <div class="footer">
+                <div class="rights">
+                    <div align="center" class="h3" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit; color: #E6399B;  margin-left: 0%; margin-top: 50%;">© Comp-intel 2021</font></font></div>
+                     <div  style="font-size: 11px; line-height: 1.3em; color: rgb(255,255,255); bottom: 0; ">
+                Перечень используемых источников : ГИБДД, ПФР, ФНС, Росстат, ЕГРЮЛ, ФМС, ФСПП, ФНП, ЕАИСТО, РСА, ЕФРСБ, ФСФМ, Росреестр, Центр раскрытия корпоративной информации, Фокус СКБ, Вконтакте, Facebook, Instagram, Одноклассники, Skype, WhatsApp, Viber, Avito, Youla (Юла), Из рук в руки – Irr.ru, Avto.ru, Циан, Яндекс, Google, Telegram, Mail.ru, Headhunter, Rusprofile, TrueCaller, Twitter, MTS, Билайн, Мегафон, Тинькофф Мобайл, Tele2, ICQ, GetContact, Foursquare, GitHub, Drive2.ru, Автокод</div>
+                </div>
+            </div>
+
+
+    </footer>
+
+
+</div>
 </body>
 </html>
