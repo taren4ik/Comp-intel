@@ -1,15 +1,13 @@
 FROM python:3.7-slim
 
-WORKDIR /app
-
-COPY . .
+COPY ./  /app
 
 RUN python -m pip install --upgrade pip
 
-RUN pip3 install -r /app/requirements.txt --no-cache-dir
+RUN pip install -r /app/requirements.txt --no-cache-dir
 
-ENTRYPOINT ['python']
+WORKDIR /app/comp_intel/
 
-CMD ['app.py']
+CMD CMD ["gunicorn", "wsgi:app", "--bind", "0:5000" ]
 
 LABEL author='turgenevski@yandex.ru' version=1.0
