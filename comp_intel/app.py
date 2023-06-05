@@ -34,6 +34,10 @@ def contact():
 def services():
     return render_template('services.html')
 
+@app.route('/source')
+def source():
+    return render_template('source.html')
+
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
