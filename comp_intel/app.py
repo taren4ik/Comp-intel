@@ -4,6 +4,10 @@ from datetime import datetime
 app = Flask(__name__)
 
 
+async def async_report(*args):
+    """Создает отчет по чату телеграм."""
+    pass
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -31,8 +35,9 @@ def contact():
 
 
 @app.route('/services')
-def services():
-    return render_template('services.html')
+async def services():
+    data = await async_report()
+    return render_template('services.html', )
 
 @app.route('/source')
 def source():
