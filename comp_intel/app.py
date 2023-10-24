@@ -8,6 +8,7 @@ async def async_report(*args):
     """Создает отчет по чату телеграм."""
     pass
 
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -34,10 +35,26 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/services')
+@app.route('/services', methods=['GET', 'POST'])
 async def services():
+
     data = await async_report()
     return render_template('services.html', )
+
+    channel = request.form.get('channel')
+    check_box = request.form.get('messages')
+    check_box_users = request.form.get('users')
+    print(check_box_users, check_box)
+    if request.method == 'POST':
+        if not (channel):
+            flash('Заполните поле для проверки чата')
+
+    else:
+        flash('Для получения информации по группе заполните форму.')
+    return render_template('services.html')
+
+
+
 
 @app.route('/source')
 def source():

@@ -20,8 +20,20 @@
 <h2 style="margin-left: 25%;">Проверить чат в Telegram</h2>
   <div class="container mt-5"  style="width:70%; height:70%;">
     <form method="post" enctype="multipart/form-data" >
-      <input type="text" name="title" id="title" class="form-control"
+      <input type="text" name="channel" id="channel" class="form-control"
              placeholder="Введите название объявления"><br>
+
+      <fieldset>
+      <legend>Выбирете тип отчета:</legend>
+        <div>
+          <input type="checkbox" id="messages" name="переписка" />
+          <label for="messages">Сообщения</label>
+        </div>
+        <div>
+          <input type="checkbox" id="users" name="пользователи" />
+          <label for="users">Пользователи</label>
+        </div>
+      </fieldset>
 
       <input type="submit"  class="btn btn-success" value="Отправить">
     </form>
