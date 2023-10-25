@@ -1,7 +1,14 @@
-from flask import Flask, render_template, url_for, request, redirect
-from datetime import datetime
+import os
+
+from flask import Flask, render_template, url_for, request, redirect, flash
+from dotenv import load_dotenv
+
+load_dotenv()
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 async def async_report(*args):
@@ -37,23 +44,21 @@ def contact():
 
 @app.route('/services', methods=['GET', 'POST'])
 async def services():
-
     data = await async_report()
-    return render_template('services.html', )
 
     channel = request.form.get('channel')
-    check_box = request.form.get('messages')
-    check_box_users = request.form.get('users')
-    print(check_box_users, check_box)
+    check_users = request.form.get('users')
+    check_messages = request.form.get('messages')
+
     if request.method == 'POST':
-        if not (channel):
+
+        if not(channel):
             flash('Заполните поле для проверки чата')
+            return render_template('services.html', )
 
     else:
         flash('Для получения информации по группе заполните форму.')
     return render_template('services.html')
-
-
 
 
 @app.route('/source')
@@ -62,4 +67,5 @@ def source():
 
 
 if __name__ == '__main__':
+    app.debug = True
     app.run(debug=False, host='0.0.0.0')
